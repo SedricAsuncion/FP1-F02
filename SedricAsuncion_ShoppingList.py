@@ -55,11 +55,13 @@ def remove_item():
             continue
 
 def modify_item():
+    # Get user input for item and number of items
     while True:
         modify_item = input("\nPlease enter item name: (enter 'q' to quit) ").lower()
 
         if modify_item == "q":
             return
+        # Add or remove certain amounts of items
         elif modify_item in shopping_list:
             action = input("Would you like to add or remove items? (+/-): ")
             if action == "+":
@@ -89,11 +91,13 @@ def modify_item():
 
 
 def clear_list(): 
+    # Clear the shopping list
     shopping_list.clear() 
     print("Your shopping list has been cleared") 
 
 
 def show_list():
+    # Show the list of items, quantity and prices
     if len(shopping_list) != 0:
         for item, details in shopping_list.items():
             if details['quantity'] > 2:
@@ -107,6 +111,7 @@ def show_list():
 
 
 def add_total(): 
+    # Calculate the total cost
     total_cost = 0 
     total_items = 0 
     for item, details in shopping_list.items():
@@ -114,7 +119,6 @@ def add_total():
         total_cost += details['price'] * details['quantity']
 
     print(f"\nTotal items: {total_items} \nTotal cost: ${total_cost} ")
-    # Create a function to make a total item count 
 
 
 # Create a function for the user's options 
